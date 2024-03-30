@@ -23,18 +23,22 @@
     --whitebg: white;
     --orangebg: orange;
     --blue-sidebar-bg: #2b71fc;
+    --feed-bg: #e3e9ff;
+    --project-bg: #edf4ff;
     --basic-font-color: white;
     --secondary-font-color: black;
     --main-image-height: 100px;
     --main-image-width: 100px;
-    --main-image-border-radius: 50%
+    --main-image-border-radius: 50%;
+    --sec-image-height: 50px;
+    --sec-image-width: 50px;
+    --sec-image-border-radius:50%;
 }
 
 .mainBody{
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 1fr 3fr;
-    gap: 5px;
 }
 
 .sidebar{
@@ -44,7 +48,7 @@
     padding: 20px;
     grid-row: 1/4;
     color: var(--basic-font-color);
-    height: 100vh;
+    height: 100%;
     background-color: var(--blue-sidebar-bg);
 }
 
@@ -82,7 +86,7 @@
     font-size: var(--default-small-header);
 }
 
-.greetingHeader {
+.greetingHeader {               
     padding-top: 20px;
     display: flex;
     flex-direction: row;
@@ -93,19 +97,28 @@
     font-size: var(--default-small-header);
 }
 
+.bottomHeader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-top: 20px;
+}   
+
+.bottomHeader button{
+    height: fit-content;
+}
+
 .bottomHeader img{
     width: var(--main-image-width);
     height: var(--main-image-height);
     border-radius: var(--main-image-border-radius);
-}
-
-
+}   
 
 .operationHeader{
     display: flex;
     flex-direction: row-reverse;
-    gap: 20px;
-    padding: 5px 20px 0px 0px;
+    gap: 30px;
+    padding: 5px 20px 5px 0px;
 }
 
 .operationHeader button{
@@ -120,6 +133,21 @@
 
 .Feed{
     grid-column: 2 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: var(--feed-bg);
+    padding-left: 20px;
+    box-shadow: 0px -3px 5px #b8b8b8;
+}
+
+.Feed h2{
+    font-size: var(--default-big-header);
+    padding: 30px 0px 30px 0px;
+    width: fit-content;
+}
+
+.alignFeed{
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -136,19 +164,44 @@
     flex-direction: column;
     gap: 7px;
     overflow: auto;
+    justify-content: center;
+    padding-left: 20px; 
+    background-color: var(--whitebg);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid orange;
+}
+
+.project h3{
+    font-size: var(--default-big-header);
+}
+
+.project p{
+    font-size: var(--default-small-header);
+}
+
+.project button{
+    font-size: var(--default-small-header);
 }
 
 .bts{
     display: flex;
-    gap: 10px;
+    gap: 20px;
     flex-direction: row-reverse;
     margin-top: 20px;
 }
 
+.bts button{
+    border: none;
+    background-color: white;
+    font-size: var(--default-small-header);
+}
+
 .rightFeed{
     display: flex;
-    flex-direction: column;
-    gap: 50px;
+    flex-direction: column; 
+    gap: 40px;
+    width: 80%;
     margin: 0px 20px 0px 20px;
 }
 
@@ -156,10 +209,48 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+    background-color: var(--whitebg);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .companyAn{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #8d8e8f;
+}
+
+.companyAn h4{
+    font-size: var(--default-big-header);
+}
+
+.companyAn p{
+    font-size: var(--default-small-header);
+}
+
+.Trending{
+    background-color: var(--whitebg);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.trendingPerson{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.trendingPerson p{
+    font-size: var(--default-small-header);
+}
+
+.trendingPerson img{
+    width: var(--sec-image-width);
+    height: var(--sec-image-height);
+    border-radius: var(--sec-image-border-radius);
 }
